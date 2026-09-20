@@ -16,8 +16,22 @@ int main(int argc, char** argv){
         return -1;
     }
 
-
     // TODO: call barcode
+    char* digits = argv[1];
+    int width = atoi(argv[2]);
+    int height = atoi(argv[3]);
+    char* filepath = argv[4];
+
+    struct image* img = barcode(digits, width, height);
+    if (img == NULL) {
+        printf("Error: can't malloc for img\n");
+        return -1;
+    }
     
     // TODO: save result to file
+    saveimage(filepath, img);
+
+    // unallocate
+    free(img->pixels);
+    free(img);
 }
