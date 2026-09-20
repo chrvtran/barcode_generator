@@ -1,0 +1,3 @@
+(1) Filter 1 loops height inside of width, whereas filter 2 loops width inside of height. Thus, filter 2 has better performance because it has better spatial locality as it accesses adjacent addresses in memory.
+(2) Filter 1 takes an increasingly longer average execution time as image size grows. Filter 2 also grows in average execution time with size, but not as much. Some key points, at 1.25 size, filter 1 is averaged at .007 seconds while filter 2 is at .004 seconds. At size 5, filter 1 is at .03 seconds and filter is at .018, almost half as fast.
+(3) 
